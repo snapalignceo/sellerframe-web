@@ -1,0 +1,137 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SellerFrame Web</title><style>*{box-sizing:border-box}body{margin:0;background:#f3f6f3;color:#17392c;font:16px Arial,Helvetica,sans-serif}header{padding:24px 4%;background:white;border-bottom:1px solid #dce4dd;display:flex;justify-content:space-between;align-items:center}header b{font-size:26px;letter-spacing:-1px}header small{font-size:12px;letter-spacing:2px;margin-left:14px;color:#64856c}header>span{font-size:14px;color:#738077}main{max-width:1440px;margin:auto;padding:35px 4%}.intro{margin-bottom:30px}.eyebrow{font-size:12px;font-weight:bold;letter-spacing:2px;color:#698a63}h1{font-size:clamp(28px,3vw,42px);letter-spacing:-1.4px;font-weight:600;margin:13px 0}.intro>p:last-child{color:#768178}.workspace{display:grid;grid-template-columns:360px 1fr;background:white;border:1px solid #dbe4dc;border-radius:16px;overflow:hidden}form{padding:26px;border-right:1px solid #e0e7e1}h2{font-size:17px;margin:0 0 20px;font-weight:600}em{font-size:12px;background:#edf3e8;padding:6px 8px;font-style:normal;margin-right:8px}form h2:not(:first-child){margin-top:30px}label{display:block;font-size:14px;font-weight:600;margin:20px 0 8px}label small{font-size:12px;font-weight:400;color:#839180}input,textarea,select{display:block;width:100%;margin-top:9px;padding:12px;border:1px solid #cfdacf;border-radius:7px;font:14px Arial;color:#1d3828;background:white}textarea{resize:vertical}.upload{background:#f4f8ee;border:1.5px dashed #a9bea1;border-radius:10px;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;cursor:pointer;gap:12px;margin-top:0}.upload input{width:100%;font-size:12px}.upload img{max-width:100%;max-height:220px;object-fit:contain}.upload small{font-size:12px;color:#7d8d75}.samples{display:flex;gap:7px;flex-wrap:wrap}.samples button{padding:0;background:white;border:2px solid transparent;border-radius:6px;width:44px;height:44px;overflow:hidden;cursor:pointer}.samples button.selected{border-color:#729538}.samples img{width:100%;height:100%;object-fit:cover}.label{font-size:12px;color:#7d8b75;margin:14px 0 8px}.hint{font-size:12px;line-height:1.6;color:#7e8b76}.primary{width:100%;padding:15px;background:#184c35;color:white;border:0;border-radius:8px;margin-top:22px;font-weight:bold;font-size:15px;cursor:pointer}button:disabled{opacity:.55;cursor:wait}.results{padding:28px;min-width:0}.result-heading{display:flex;justify-content:space-between;align-items:center}.result-heading h2{margin-bottom:0}.download{font-size:14px;padding:10px 15px;background:#dfff91;color:#214727;border-radius:6px;text-decoration:none}.status{font-size:14px;line-height:1.6;margin:22px 0;padding:14px 17px;background:#f1f5eb;border-left:3px solid #a7bd81;border-radius:4px}.empty{min-height:370px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#f7faf6;border:1px solid #e0e8de;border-radius:12px;padding:30px}.empty>span{font-size:70px;color:#a8bfa0}.empty h3{font-size:20px;font-weight:500}.empty p{font-size:14px;color:#829079;max-width:340px;line-height:1.7}#gallery.ready{display:grid;grid-template-columns:1fr 1fr;gap:16px}article{border:1px solid #dfe8dc;border-radius:9px;overflow:hidden}article img{display:block;width:100%;aspect-ratio:1;object-fit:contain;background:repeating-conic-gradient(#f2f2f2 0% 25%,white 0% 50%) 50%/20px 20px}article div{padding:15px}article h3{font-size:14px;margin:0 0 12px}article a{font-size:14px;color:#466b34}.library{margin-top:28px;border-top:1px solid #e3e9df;padding-top:16px}.library h3{font-size:17px;font-weight:500}.library p:not(.eyebrow){font-size:13px;line-height:1.7;color:#829077}.library a{color:#557443}footer{font-size:12px;color:#87967e;text-align:center;padding:25px}[hidden]{display:none!important}:focus-visible{outline:3px solid #a2c562;outline-offset:3px}@media(max-width:850px){.workspace{grid-template-columns:1fr}form{border-right:0;border-bottom:1px solid #e0e7e1}header>span{display:none}#gallery.ready{grid-template-columns:1fr}.results,form{padding:20px}}
+
+.case-colours{display:flex;gap:6px;flex-wrap:wrap}.case-colours button{border:2px solid #ddd;border-radius:7px;background:white;padding:5px;cursor:pointer;font-size:10px}.case-colours button[aria-pressed="true"]{border-color:#17392c;outline:2px solid #a2c562}.case-colours span{display:block;width:42px;height:32px;border-radius:3px;margin-bottom:5px}
+</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23143d30'/%3E%3Cpath d='M8 13V8h5m6 0h5v5M8 19v5h5m6 0h5v-5' fill='none' stroke='%23dcff83' stroke-width='3'/%3E%3C/svg%3E"><body><header><b>▣ sellerframe <small>WEB</small></b><span>Free browser tools. Your photos stay on your device.</span></header><main><div class="intro"><p class="eyebrow">PRODUCT IMAGE WORKSPACE</p><h1>Your product. A fresh perspective.</h1><p>Create square product images, two-colour model labels and listing copy.</p></div><div class="workspace"><form id="form"><h2><em>01</em> Choose a product</h2><label class="upload" id="drop"><input type="file" id="file" accept="image/png,image/jpeg,image/webp"><img id="source" hidden alt="Selected product"><span id="upload-label">Drop a product photo or click to browse</span><small>JPG, PNG, WebP · up to 10 MB</small></label><button type="button" id="take-photo">Take photo with camera</button><input type="file" id="camera-file" accept="image/*" capture="environment" hidden><p class="hint">On your phone, take a photo with the rear camera. You can also choose an existing photo above.</p><div id="samples" class="samples" hidden></div><p class="hint">Your photo stays in this browser. Its background is retained. Use a clean white-background photo or transparent PNG.</p><label>Product name / listing title<input name="name" maxlength="80" placeholder="e.g. Phone Case for iPhone 16 Pro Max - Navy Blue"></label><label>Phone model for listing title<input id="seo-model" list="model-suggestions" placeholder="e.g. iPhone 16 Pro Max" maxlength="48"></label><label>Case colour for listing title<input id="seo-colour" placeholder="e.g. Navy Blue" maxlength="24"></label><button type="button" id="detect-colours">Detect case colour again</button><button type="button" id="suggest-title">Generate listing text</button><p id="title-length" class="hint" aria-live="polite">Title: 0 / 80 characters (tool limit)</p><label>SEO keywords<textarea id="seo-keywords" name="seo_keywords" maxlength="1000" rows="3" placeholder="Keywords appear here"></textarea></label><label>Listing description<textarea id="seo-description" name="seo_description" maxlength="1400" rows="5" placeholder="Description appears here"></textarea></label><p id="description-length" class="hint" aria-live="polite">Description: 0 / 1400 characters</p><p class="hint">Local template generation. Uses only the details you enter; no live ChatGPT connection.</p><button type="button" id="copy-listing">Copy listing text</button><button type="button" id="download-copy">Download listing text</button><p id="seo-status" class="hint" aria-live="polite">Enter the compatible model and case colour, then generate your title, keywords and description. All text is editable.</p><label><input type="checkbox" id="add-model-text" style="display:inline;width:auto;margin-right:8px"> Add vertical model name</label><div id="model-text-options" hidden><label>Vertical model name<input name="model_name" list="model-suggestions" maxlength="48" placeholder="e.g. iPhone 16 Pro Max"></label><datalist id="model-suggestions"><option value="iPhone 16"><option value="iPhone 16 Plus"><option value="iPhone 16 Pro"><option value="iPhone 16 Pro Max"></datalist><p class="label">Dark colours from your photo</p><label>Apply sampled colour to<select id="colour-target"><option value="model_color_1">First word · iPhone</option><option value="model_color_2">Remaining name · 16 Pro Max</option></select></label><div id="case-colours" class="case-colours"></div><p id="case-colour-status" class="hint" aria-live="polite">Upload a case photo to see five dark colour suggestions.</p><p id="colour-preview" style="font-size:20px;font-weight:bold"><span id="accent-preview">iPhone</span> <span id="model-preview">16 Pro Max</span></p><label>Suggested colours<select id="text-palette"><option value="custom">Choose a combination…</option><option value="#344c6b,#171717">Navy + black · blue cases</option><option value="#ac8c73,#171717">Warm brown + black · brown cases</option><option value="#85819b,#171717">Lavender grey + black · grey cases</option><option value="#808080,#171717">Grey + black · black cases</option><option value="#b76c86,#171717">Rose + black · pink cases</option><option value="#37644e,#171717">Forest green + black · green cases</option></select></label><p class="hint">Choose a suggested name or type your own. You can adjust both colours below.</p><p class="hint">Adds a separate supplementary image with the model name running vertically beside the case. The first word uses colour 1; the remaining model name uses colour 2.</p><label>Text colour 1<input type="color" name="model_color_1" value="#17243b"></label><label>Text colour 2<input type="color" name="model_color_2" value="#2874d0"></label></div><label>Verified features <small>one per line, up to 3</small><textarea name="details" maxlength="240" rows="3" placeholder="Material, size, features…"></textarea></label><label>Marketplace<select name="marketplace"><option>Amazon</option><option>Meesho</option><option>Other</option></select></label><p class="hint">1600 × 1600 exports in lossless PNG and high-quality JPG, plus the full-resolution original. Check your category’s requirements before listing.</p><p class="hint">For the main listing image, use the plain product image without added text. Text and feature cards are separate optional outputs.</p><p id="source-quality" class="hint" aria-live="polite"></p><select id="scene" hidden><option value="none">none</option></select><div id="reference-options" hidden></div><div id="ai-options" hidden></div><button id="generate" class="primary" type="submit">Create square images</button><p class="hint">Virtual try-on is not included. This version preserves your photographed product instead of redrawing it on a person.</p></form><section class="results"><div class="result-heading"><h2>Your listing pack</h2><a id="zip" class="download" hidden>Download all</a></div><div class="status" id="status" role="status" aria-live="polite">Choose a product to begin. All processing runs in your browser.</div><div id="gallery"><div class="empty"><span>▧</span><h3>Ready for your first product.</h3><p>Your white-background photo, feature image, and transparent cutout will appear here.</p></div></div></section></div><footer>SellerFrame Web · No API key · Browser-only processing</footer></main><script>const form=document.querySelector('#form'),file=document.querySelector('#file'),source=document.querySelector('#source'),statusBox=document.querySelector('#status'),gallery=document.querySelector('#gallery'),button=document.querySelector('#generate');let selectedSample='',selectedFile=null,token='',objectUrl='';
+async function readResponse(response){const type=response.headers.get('content-type')||'';if(!type.includes('application/json'))throw Error(response.status===403?'Your session expired. Please try again.':'The local server returned an error ('+response.status+'). Please try again.');return response.json();}
+function preview(url){source.src=url;source.hidden=false;document.querySelector('#upload-label').textContent='Your original photo';}
+function pick(f){if(!f)return;if(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>10485760){statusBox.textContent='Choose a JPG, PNG or WebP smaller than 10 MB.';return;}if(objectUrl)URL.revokeObjectURL(objectUrl);objectUrl=URL.createObjectURL(f);selectedFile=f;selectedSample='';preview(objectUrl);document.querySelectorAll('.samples button').forEach(x=>x.classList.remove('selected'));}
+file.addEventListener('change',()=>pick(file.files[0]));const drop=document.querySelector('#drop');drop.addEventListener('dragover',e=>e.preventDefault());drop.addEventListener('drop',e=>{e.preventDefault();pick(e.dataTransfer.files[0])});
+document.querySelector('#scene').addEventListener('change',e=>{document.querySelector('#reference-options').hidden=e.target.value!=='reference';document.querySelector('#ai-options').hidden=e.target.value!=='ai'});
+
+
+document.querySelector('#add-model-text').addEventListener('change',e=>{document.querySelector('#model-text-options').hidden=!e.target.checked;});
+
+document.querySelector('#text-palette').addEventListener('change',e=>{if(e.target.value==='custom')return;const colours=e.target.value.split(',');form.elements.model_color_1.value=colours[0];form.elements.model_color_2.value=colours[1];});
+for(const key of ['model_color_1','model_color_2'])form.elements[key].addEventListener('input',()=>{document.querySelector('#text-palette').value='custom';});
+
+function updateColourPreview(){
+ const parts=(form.elements.model_name.value.trim()||'iPhone 16 Pro Max').split(/\s+/);
+ document.querySelector('#accent-preview').textContent=parts.shift();
+ document.querySelector('#model-preview').textContent=parts.join(' ');
+ document.querySelector('#accent-preview').style.color=form.elements.model_color_1.value;
+ document.querySelector('#model-preview').style.color=form.elements.model_color_2.value;
+ document.querySelectorAll('#case-colours button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.colour===form.elements[document.querySelector('#colour-target').value].value)));
+}
+function suggestCaseColours(){
+ const holder=document.querySelector('#case-colours'),message=document.querySelector('#case-colour-status');holder.replaceChildren();
+ try{
+ const canvas=document.createElement('canvas');canvas.width=160;canvas.height=160;
+ const ctx=canvas.getContext('2d',{willReadFrequently:true});ctx.drawImage(source,0,0,160,160);
+ const pixels=ctx.getImageData(0,0,160,160).data,bins=new Map();
+ for(let y=12;y<148;y++)for(let x=20;x<140;x++){
+ const i=(y*160+x)*4,r=pixels[i],g=pixels[i+1],b=pixels[i+2];
+ if(pixels[i+3]<220||Math.min(r,g,b)>225)continue;
+ const key=[r>>4,g>>4,b>>4].join(',');let bin=bins.get(key);
+ if(!bin){bin={n:0,r:0,g:0,b:0};bins.set(key,bin);}bin.n++;bin.r+=r;bin.g+=g;bin.b+=b;
+ }
+ const score=v=>{const rgb=[v.r/v.n,v.g/v.n,v.b/v.n],hi=Math.max(...rgb),lo=Math.min(...rgb);return v.n*(1+6*(hi-lo)/Math.max(hi,1));};
+ const candidates=[...bins.values()].sort((a,b)=>score(b)-score(a)).map(v=>[Math.round(v.r/v.n),Math.round(v.g/v.n),Math.round(v.b/v.n)]);
+ // Keep case hues, darkening light samples for readable text on white.
+ const luminance=rgb=>rgb.map(v=>{v/=255;return v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4;}).reduce((sum,v,i)=>sum+v*[0.2126,0.7152,0.0722][i],0);
+ const darkCandidates=candidates.map(rgb=>{let shade=[...rgb];while(luminance(shade)>0.183)shade=shade.map(v=>Math.floor(v*0.94));return shade;});
+ const chosen=[];
+ for(const distance of [55,30,12,0]){
+ for(const rgb of darkCandidates){if(chosen.length===5)break;if(chosen.every(c=>Math.hypot(...c.map((v,i)=>v-rgb[i]))>distance))chosen.push(rgb);}
+ if(chosen.length===5)break;
+ }
+ if(chosen.length){const toHex=rgb=>'#'+rgb.map(v=>v.toString(16).padStart(2,'0')).join('');form.elements.model_color_1.value=toHex(chosen[0]);form.elements.model_color_2.value=toHex(chosen[1]||chosen[0]);document.querySelector('#text-palette').value='custom';}
+ for(const rgb of chosen){const hex='#'+rgb.map(v=>v.toString(16).padStart(2,'0')).join('');const b=document.createElement('button');b.type='button';b.dataset.colour=hex;b.setAttribute('aria-label','Use case colour '+hex);b.setAttribute('aria-pressed','false');const swatch=document.createElement('span');swatch.style.background=hex;b.append(swatch,document.createTextNode(hex));b.onclick=()=>{form.elements[document.querySelector('#colour-target').value].value=hex;document.querySelector('#text-palette').value='custom';updateColourPreview();};holder.append(b);}
+ message.textContent=chosen.length?`Both text colours use dark case-inspired shades. Light samples are darkened for readability. Choose which text part to change, then select a swatch. ${chosen.length} distinct colours found in the photo.`:'No distinct case colours found. Choose colours manually below.';
+ updateColourPreview();
+ }catch{message.textContent='Could not sample this photo. Choose colours manually below.';}
+}
+source.addEventListener('load',suggestCaseColours);
+source.addEventListener('error',()=>{document.querySelector('#case-colour-status').textContent='Photo could not be loaded. Upload it again to detect colours.';});
+for(const key of ['model_name','model_color_1','model_color_2'])form.elements[key].addEventListener('input',updateColourPreview);
+document.querySelector('#text-palette').addEventListener('change',updateColourPreview);
+updateColourPreview();
+
+document.querySelector('#colour-target').addEventListener('change',updateColourPreview);
+
+function estimateCaseColour(){
+ const filename=selectedFile?.name.replace(/[_-]+/g,' ')||'';
+ const named=filename.match(/\b(navy|blue|brown|black|grey|gray|green|pink|purple|burgundy|burgandy|red|orange|white)\b/i);
+ if(named){const names={gray:'Grey',burgandy:'Burgundy',navy:'Navy Blue'};const key=named[1].toLowerCase();return names[key]||key[0].toUpperCase()+key.slice(1);}
+ const hex=document.querySelector('#case-colours button')?.dataset.colour;
+ if(!hex)return '';
+ const [r,g,b]=hex.slice(1).match(/../g).map(x=>parseInt(x,16));
+ const max=Math.max(r,g,b),min=Math.min(r,g,b),delta=max-min;
+ if(max<40)return 'Black';
+ if(delta<22||delta/Math.max(max,1)<0.18)return 'Grey';
+ let hue=max===r?((g-b)/delta)%6:max===g?(b-r)/delta+2:(r-g)/delta+4;
+ hue=(hue*60+360)%360;
+ if(hue>=15&&hue<65)return 'Brown';
+ if(hue>=65&&hue<170)return 'Green';
+ if(hue>=170&&hue<255)return 'Blue';
+ if(hue>=255&&hue<320)return 'Purple';
+ // Red needs clear chromatic evidence, not just a slightly warmer grey.
+ if((hue<15||hue>=345)&&r>g*1.5&&r>b*1.5)return 'Burgundy';
+ return '';
+
+}
+// Listing colour is supplied by the seller; image sampling only changes text swatches.
+document.querySelector('#detect-colours').addEventListener('click',()=>{if(!source.naturalWidth){document.querySelector('#seo-status').textContent='Upload a case photo first.';return;}suggestCaseColours();document.querySelector('#seo-colour').value=estimateCaseColour();document.querySelector('#seo-status').textContent='Colour refreshed. Check the detected colour before listing.';});
+file.addEventListener('change',()=>{
+ const match=file.files[0]?.name.replace(/[_-]+/g,' ').match(/iphone\s*(\d{1,2})(?:\s*(pro\s*max|pro|plus|mini))?/i);
+ if(match)document.querySelector('#seo-model').value='iPhone '+match[1]+(match[2]?' '+match[2].toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()):'');
+ else document.querySelector('#seo-model').value='';
+});
+document.querySelector('#suggest-title').addEventListener('click',()=>{
+ const model=(document.querySelector('#seo-model').value||form.elements.model_name.value).trim();
+ const message=document.querySelector('#seo-status');
+ if(!model){message.textContent='Enter the compatible phone model first, for example iPhone 16 Pro Max.';document.querySelector('#seo-model').focus();return;}
+ const colour=document.querySelector('#seo-colour').value.trim();
+ if(!colour){message.textContent='Enter the case colour first.';document.querySelector('#seo-colour').focus();return;}
+ const suppliedFeatures=form.elements.details.value.trim().split(/\n/).map(x=>x.trim()).filter(Boolean);
+ let title='Phone Case for '+model+' - '+colour;
+ if(suppliedFeatures[0]&&(title+' | '+suppliedFeatures[0]).length<=80)title+=' | '+suppliedFeatures[0];
+ if(title.length>80){message.textContent='Shorten the model or colour so the title fits 80 characters.';return;}
+ form.elements.name.value=title;updateTitleLength();
+ document.querySelector('#seo-keywords').value=[model+' case',model+' cover',colour+' phone case',colour+' '+model+' case','phone back cover for '+model].join(', ');
+ const features=form.elements.details.value.trim().split(/\n/).map(x=>x.trim()).filter(Boolean);
+ const paragraphs=[`${colour} phone case for ${model}. This listing is for the ${colour.toLowerCase()} version; please check the product photos alongside the specifications below.`, `COMPATIBILITY\nFor ${model} only. Check the exact model in your phone settings before ordering; similarly named phones may have different dimensions and camera layouts.`, `COLOUR\n${colour}. Lighting and screen settings can affect how the shade appears in photos.`];
+ if(features.length)paragraphs.push('CASE DETAILS\n'+features.slice(0,3).map(x=>'• '+x).join('\n'));
+ paragraphs.push('BEFORE YOU ORDER\nConfirm the model, colour and features listed above. Refer to the product photos for the case design, camera opening and button layout.');
+ let description='';for(const paragraph of paragraphs){const next=description+(description?'\n\n':'')+paragraph;if(next.length<=1400)description=next;}
+ document.querySelector('#seo-description').value=description;updateDescriptionLength();
+
+ message.textContent='Listing text generated from your model, colour and supplied features. Review and edit before publishing.';
+});
+
+document.querySelector('#copy-listing').addEventListener('click',async()=>{const text=[form.elements.name.value,'Keywords: '+document.querySelector('#seo-keywords').value,document.querySelector('#seo-description').value].join('\n\n');try{await navigator.clipboard.writeText(text);document.querySelector('#seo-status').textContent='Listing text copied.';}catch{document.querySelector('#seo-status').textContent='Copy was unavailable. Select and copy the text from the fields.';}});
+
+function updateTitleLength(){document.querySelector('#title-length').textContent='Title: '+form.elements.name.value.length+' / 80 characters (tool limit)';}
+form.elements.name.addEventListener('input',updateTitleLength);
+source.addEventListener('load',()=>{document.querySelector('#source-quality').textContent='Original: '+source.naturalWidth+' × '+source.naturalHeight+' px. Square exports: 1600 × 1600 px.'+(Math.min(source.naturalWidth,source.naturalHeight)<1000?' Small source: enlarging cannot restore missing detail.':' Download lossless PNG for best export quality.');});
+
+function updateDescriptionLength(){const field=document.querySelector('#seo-description');document.querySelector('#description-length').textContent='Description: '+field.value.length+' / 1400 characters';field.setCustomValidity(field.value.length>1400?'Description must be 1400 characters or fewer.':'');}
+document.querySelector('#seo-description').addEventListener('input',updateDescriptionLength);
+
+form.addEventListener('submit',async e=>{
+ e.preventDefault();if(!source.naturalWidth){statusBox.textContent='Upload a product photo first.';return;}
+ button.disabled=true;gallery.replaceChildren();gallery.className='ready';
+ try{
+ const addText=document.querySelector('#add-model-text').checked;
+ const name=form.elements.model_name.value.trim();
+ if(addText&&!name)throw Error('Enter the vertical model name or switch text off.');
+ function render(labelled){
+ const c=document.createElement('canvas');c.width=c.height=1600;const ctx=c.getContext('2d');ctx.fillStyle='white';ctx.fillRect(0,0,1600,1600);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
+ const area=labelled?{x:400,y:80,w:1100,h:1440}:{x:80,y:80,w:1440,h:1440};const scale=Math.min(area.w/source.naturalWidth,area.h/source.naturalHeight);const w=source.naturalWidth*scale,h=source.naturalHeight*scale;ctx.drawImage(source,area.x+(area.w-w)/2,area.y+(area.h-h)/2,w,h);
+ if(labelled){const parts=name.split(/\s+/),first=parts.shift()+' ',rest=parts.join(' ');let size=112;ctx.font='bold '+size+'px Arial';while(ctx.measureText(name).width>1320&&size>20){size-=2;ctx.font='bold '+size+'px Arial';}const width=ctx.measureText(name).width;ctx.save();ctx.translate(260,800+width/2);ctx.rotate(-Math.PI/2);ctx.fillStyle=form.elements.model_color_1.value;ctx.fillText(first,0,0);ctx.fillStyle=form.elements.model_color_2.value;ctx.fillText(rest,ctx.measureText(first).width,0);ctx.restore();}return c;
+ }
+ for(const labelled of addText?[false,true]:[false]){const c=render(labelled),card=document.createElement('article'),img=document.createElement('img'),body=document.createElement('div'),heading=document.createElement('h3');const png=c.toDataURL('image/png');img.src=png;img.alt=labelled?'Vertical model name':'Plain square image';heading.textContent=img.alt;body.append(heading);for(const format of ['png','jpeg']){const a=document.createElement('a');a.href=format==='png'?png:c.toDataURL('image/jpeg',0.98);a.download=(labelled?'model-name':'plain-square')+'.'+(format==='png'?'png':'jpg');a.textContent=format==='png'?'Download lossless PNG':'Download JPG';a.style.display='block';a.style.marginTop='8px';body.append(a);}card.append(img,body);gallery.append(card);}
+ statusBox.textContent='Square images ready. Original background retained; download PNG for best quality.';
+ }catch(error){statusBox.textContent=error.message;}finally{button.disabled=false;}
+});
+document.querySelector('#download-copy').addEventListener('click',()=>{const text=[form.elements.name.value,'Keywords: '+document.querySelector('#seo-keywords').value,document.querySelector('#seo-description').value].join('\n\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'}));a.download='listing-text.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
+document.querySelector('#take-photo').addEventListener('click',()=>document.querySelector('#camera-file').click());document.querySelector('#camera-file').addEventListener('change',e=>{pick(e.target.files[0]);e.target.value='';});</script></body></html>
